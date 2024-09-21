@@ -30,19 +30,19 @@ h1 {
 header nav {
     display: flex;
     justify-content: center;
-    gap: 20px; 
+    gap: 20px; /* Espaçamento entre os itens do menu */
 }
 
 header nav a {
     color: white;
     text-decoration: none;
-    font-size: 1.2rem; 
-    display: flex; 
-    align-items: center; 
+    font-size: 1.2rem; /* Tamanho da fonte dos links */
+    display: flex; /* Para alinhar o ícone e texto */
+    align-items: center; /* Alinhamento vertical */
 }
 
 header nav a i {
-    margin-right: 5px; 
+    margin-right: 5px; /* Espaço entre o ícone e o texto */
 }
 
 main {
@@ -63,10 +63,10 @@ h2, h3, h4 {
 }
 
 .foto-perfil {
-    width: 100px; 
-    height: 100px; 
-    border-radius: 50%; 
-    margin-right: 20px; 
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Para uma imagem circular */
+    margin-right: 20px; /* Espaço entre a imagem e o texto */
 }
 
 .bimestre, .projeto {
@@ -80,10 +80,7 @@ h2, h3, h4 {
 }
 
 .bimestre-img, .projeto-img {
-    width: 100%;
-    max-width: 100px; 
-    height: auto; 
-    object-fit: cover; 
+    width: 100px;
     margin-right: 20px;
 }
 
@@ -106,21 +103,33 @@ li {
 }
 
 .projeto-img {
-    width: 100%;         
-    max-width: 300px;    
-    height: auto;        
-    object-fit: cover;   
-    border-radius: 5px;  
+    width: 100%;         /* Ocupará 100% da largura do contêiner pai */
+    max-width: 300px;    /* Define o tamanho máximo para as imagens */
+    height: auto;        /* Ajusta a altura proporcionalmente */
+    object-fit: cover;   /* Mantém o enquadramento adequado, cortando o excesso se necessário */
+    border-radius: 5px;  /* Arredonda levemente os cantos das imagens */
 }
 
+.bimestre-img {
+    width: 100%;         /* Ocupará toda a largura do contêiner */
+    max-width: 100px;    /* Define um tamanho máximo para as imagens */
+    height: auto;        /* Mantém a proporção da imagem */
+    object-fit: cover;   /* Ajusta a imagem, cobrindo o espaço sem distorções */
+}
+
+
 @media (max-width: 768px) {
-    .projeto-img {
-        max-width: 100%;  
+    .bimestre, .projeto, .sobre-mim {
+        flex-direction: column; 
+        align-items: flex-start;
     }
 
-    .bimestre, .projeto, .sobre-mim {
-        flex-direction: column;
-        align-items: flex-start;
+    .bimestre-img, .projeto-img, .foto-perfil {
+        margin-bottom: 10px;
+    }
+
+    .projeto-img {
+        max-width: 100%;  
     }
 
     .bimestre-img {
@@ -140,16 +149,15 @@ li {
         text-align: center;     
     }
 
-    .bimestre-info h4 {
-        font-size: 1.5rem; 
+    .bimestre {
+        align-items: center; 
     }
 
-    .bimestre-info p,
-    .bimestre-info ul li {
-        font-size: 1rem; 
-    }
-
-    .bimestre-info {
-        text-align: center; 
+    .bimestre-img {
+        margin-right: 0;         
+        margin-bottom: 10px;     
+        display: block;
+        margin-left: auto;
+        margin-right: auto;      
     }
 }
